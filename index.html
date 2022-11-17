@@ -9,45 +9,56 @@
     <title>CDS Form</title>
 </head>
 <body>
-   
+   <div class="container mt-5">
+    <img src="assets\images\CDS-header.png" alt="Header Image">
+   </div>
     <div class="containter mt-5">
-        <h1>Contact Form</h1>
-        <form class="row g-3">
-            <div class="col-md-6">
+        <h1 class="text-center">Contact Details</h1>
+        <form class="row g-2" id="info-form">
+            <div class="col-md-5 mx-auto">
                 <label for="first-name" class="form-label" id="bold-label"> First Name </label>
-                <input type="text" class="form-control" id="first-name" maxlength="50" required>
+                <input type="text" class="form-control" name="first-name" maxlength="50" required>
                 <label for="first-name" class="form-label"> Is required* </label>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5 mx-auto">
                 <label for="last-name" class="form-label" id="bold-label"> Last Name </label>
-                <input type="text" class="form-control" id="last-name" maxlength="50"  required>
+                <input type="text" class="form-control" name="last-name" maxlength="50"  required>
                 <label for="last-name" class="form-label"> Is required* </label>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-5 mx-auto">
                 <label for="email-address" class="form-label"> Email </label>
-                <input type="email" class="form-control" id="email-address" placeholder="email@email.com" required>
+                <input type="email" class="form-control" name="email-address" placeholder="email@email.com" required>
                 <label for="email-address" class="form-label"> Is required* </label>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5 mx-auto">
                 <label for="phone-number" class="form-label"> Phone Number </label>
-                <input type="text" class="form-control" id="phone-number" required>
+                <input type="text" class="form-control" name="phone-number" required>
                 <label for="phone-number" class="form-label"> Is required* </label>
             </div>
-            <div class="col-md-6">
-                <label for="promo-code" class="form-label" id="bold-label"> Promo Code</label>
-                <input type="text" class="form-control" id="promo-code" maxlength="7" required>
-                <label for="promo-code" class="form-label"> Is required* </label>
+            <div class="col-md-5 mx-auto">
+                <label for="promo-code" class="form-label" > Promo Code</label>
+                <input type="text" class="form-control" name="promo-code" maxlength="7" >
             </div>
-            <div class="col-md-6">
-                <label for="last-name" class="form-label" id="bold-label"> Last Name </label>
-                <input type="text" class="form-control" id="last-name" maxlength="50"  required>
-                <label for="last-name" class="form-label"> Is required* </label>
+            <div class="form-group col-md-5 mx-auto">
+                <label for="how-did" class="form-label" > How did you hear about us? </label>
+                <select name="how-did" class="form-control">
+                    <option selected></option>
+                    <option>Social Media</option>
+                    <option>E-mail</option>s
+                    <option>From a friend</option>
+                    <option>Other</option>
+                  </select>
             </div>
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-primary">submit</button>
-            </div>
+
+                <div class="col-md-12 mx-auto">
+                <button type="submit" class="btn btn-primary mx-auto">submit</button>
+                </div>
         </form>
     </div>
+    <div class="container mt-5">
+        <footer>For assistance please call 555-5555 or email test@test.com. 
+        </footer>
+       </div>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
