@@ -12,48 +12,51 @@
    <div class="container mt-5">
     <img src="assets\images\CDS-header.png" alt="Header Image">
    </div>
-    <div class="containter mt-5">
+    <div class="containter mt-5 border border-primary">
         <h1 class="text-center">Contact Details</h1>
         <form class="row g-2" id="info-form">
             <div class="col-md-5 mx-auto">
-                <label for="first-name" class="form-label" id="bold-label"> First Name </label>
+                <label for="first-name" class="form-label text-left" id="bold-label"> First Name </label>
                 <input type="text" class="form-control" name="first-name" maxlength="50" required>
-                <label for="first-name" class="form-label"> Is required* </label>
+                <label for="first-name" class="form-label"  id="is-required"> Is required* </label>
             </div>
             <div class="col-md-5 mx-auto">
-                <label for="last-name" class="form-label" id="bold-label"> Last Name </label>
+                <label for="last-name" class="form-label " id="bold-label"> Last Name </label>
                 <input type="text" class="form-control" name="last-name" maxlength="50"  required>
-                <label for="last-name" class="form-label"> Is required* </label>
+                <label for="last-name" class="form-label"  id="is-required"> Is required* </label>
             </div>
             <div class="col-md-5 mx-auto">
                 <label for="email-address" class="form-label"> Email </label>
                 <input type="email" class="form-control" name="email-address" placeholder="email@email.com" required>
-                <label for="email-address" class="form-label"> Is required* </label>
+                <label for="email-address" class="form-label"  id="is-required"> Is required* </label>
             </div>
             <div class="col-md-5 mx-auto">
                 <label for="phone-number" class="form-label"> Phone Number </label>
-                <input type="text" class="form-control" name="phone-number" required>
-                <label for="phone-number" class="form-label"> Is required* </label>
+                <input type="number" class="form-control" name="phone-number" maxlength="30" required>
+                <label for="phone-number" class="form-label" id="is-required"> Is required* </label>
             </div>
             <div class="col-md-5 mx-auto">
                 <label for="promo-code" class="form-label" > Promo Code</label>
-                <input type="text" class="form-control" name="promo-code" maxlength="7" >
+                <input type="text" class="form-control" name="promo-code" maxlength="7" required="true" >
+                <label for="promo-code" class="form-label" id="is-required"> Is required*</label>
             </div>
             <div class="form-group col-md-5 mx-auto">
                 <label for="how-did" class="form-label" > How did you hear about us? </label>
-                <select name="how-did" class="form-control">
+                <select id="how-did" name="how-did" class="form-control">
                     <option selected></option>
-                    <option>Social Media</option>
-                    <option>E-mail</option>s
-                    <option>From a friend</option>
-                    <option>Other</option>
+                    <option id="social-option">Social Media</option>
+                    <option id="email-option">E-mail</option>s
+                    <option id="friend-option">From a friend</option>
+                    <option id="other-option">Other...</option>
                   </select>
+                  <label for="how-did" class="form-label" > Optional </label>
             </div>
 
                 <div class="col-md-12 mx-auto">
-                <button type="submit" class="btn btn-primary mx-auto">submit</button>
+                <button type="submit" class="btn btn-primary">submit</button>
                 </div>
         </form>
+
     </div>
     <div class="container mt-5">
         <footer>For assistance please call 555-5555 or email test@test.com. 
@@ -64,5 +67,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
+
 </body>
 </html>
