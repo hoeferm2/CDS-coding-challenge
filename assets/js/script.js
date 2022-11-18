@@ -5,8 +5,34 @@ const phoneNumEl = $('input[name="phone-number"]')
 const emailEl = $('input[name="email-address"]')
 const promoCodeEl = $('input[name="promo-code"]')
 const howDidEl = $('select[name="how-did"]')
+const otherSelectedEl = $('input[name="other-selected"]')
 const termsConditionsEl = $('input[name="terms-conditions"]')
 
+
+// adds and removes text box based on  whether or not the option "Other..." was selected. 
+function addTextForOther (event) {
+  event.preventDefault()
+  if (howDidEl.val() == "Other...") {
+    $("#how-did-form").append('<input type="text" class="form-control" name="other-selected" id="other-selected" maxlength="255" required><label for="promo-code" class="form-label" id="is-required-other"> Is required*</label>');
+  } else {
+    $("#other-selected").remove()
+    $("#is-required-other").remove()
+  }
+}
+
+// on seleciton of howDidEl.val the required attribute is removed from promocode. Changes bottom label of promo-code-div
+function switchRequired(event) {
+  event.preventDefault()
+  if (howDidEl.val() != "") {
+    console.log(howDidEl.val())
+    $('#promo-code').attr('required',false)
+    $('#is-required-promo').html("Optional*")
+  } else {
+    $('#promo-code').attr('required',true)
+    $('#is-required-promo').html("Is required*")
+  }
+  console.log('This worked')
+}
 
 
 
@@ -18,7 +44,8 @@ function handleFormSubmit(event) {
     console.log('Phone Number:', phoneNumEl.val());
     console.log('Email:', emailEl.val());
     console.log('Promo Code:', promoCodeEl.val());
-    console.log('How you found out about us:',howDidEl.val())
+    console.log('How you found out about us:',howDidEl.val() + otherSelectedEl.val())
+    console.log("Read terms and condtions?" + termsConditionsEl.val())
 
 
     //clear inputs
@@ -28,40 +55,7 @@ function handleFormSubmit(event) {
     $('input[type="checkbox"]').prop('checked', false);
 }
 
-// function disableDropDown (event) {
-//   event.preventDefault()
-//   if (promoCodeEl.val != "") {
-//     $('select[name="how-did"]').attr('disabled',true)
-//   }
-//    else if (promoCodeEl.val.len = 0) {
-//     $('select[name="how-did"]').removeAttr('disabled')
-//   }
-//   console.log(promoCodeEl.val())
-// } 
 
-function addTextForOther (event) {
-  event.preventDefault()
-  if (howDidEl.val() == "Other...") {
-    $(formEl).append('required')
-  } else {
-    console.log('No need to describe.')
-  }
-}
-
-
-function switchRequired(event) {
-  event.preventDefault()
-  if (howDidEl.val() != "") {
-    $('input[name="promo-code"]').attr('required',false)
-  } else {
-    $('input[name="promo-code"]').attr('required',true)
-  }
-  console.log('This worked')
-}
-
-function otherInput(event) {
-  event.preventDefault()
-}
 
 // promoCodeEl.on('keyup',disableDropDown)
 howDidEl.on('change',addTextForOther)

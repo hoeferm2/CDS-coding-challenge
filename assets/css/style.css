@@ -21,6 +21,12 @@
  #is-required {
   color: red;
  }
+ #is-required-promo {
+  color: red;
+ }
+ #is-required-other {
+  color: red;
+ }
 
   img {
     margin: 10 auto;

@@ -35,31 +35,34 @@
                 <input type="number" class="form-control" name="phone-number" maxlength="30" required>
                 <label for="phone-number" class="form-label" id="is-required"> Is required* </label>
             </div>
-            <div class="col-md-5 mx-auto">
+            <div class="col-md-5 mx-auto" id="promo-code-div">
                 <label for="promo-code" class="form-label" > Promo Code</label>
-                <input type="text" class="form-control" name="promo-code" maxlength="7" required="true" >
-                <label for="promo-code" class="form-label" id="is-required"> Is required*</label>
+                <input type="text" id="promo-code" class="form-control" name="promo-code" maxlength="7" required="true" >
+                <label for="promo-code" class="form-label" id="is-required-promo"> Is required*</label>
             </div>
-            <div class="form-group col-md-5 mx-auto">
+            <div class="form-group col-md-5 mx-auto " id="how-did-form">
                 <label for="how-did" class="form-label" > How did you hear about us? </label>
                 <select id="how-did" name="how-did" class="form-control">
-                    <option selected></option>
+                    <option  id="no-selection" selected></option>
                     <option id="social-option">Social Media</option>
                     <option id="email-option">E-mail</option>s
                     <option id="friend-option">From a friend</option>
                     <option id="other-option">Other...</option>
                   </select>
-                  <label for="how-did" class="form-label" > Optional </label>
             </div>
-
-                <div class="col-md-12 mx-auto">
+            <div class="col-md-3 mx-auto">
+                <label for="promo-code" class="form-label" > I have read the <a href="">Terms and Conditions</a></label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label for="promo-code" class="form-label" id="is-required-promo"> Is required*</label>
+            </div>
+            <div class="col-md-12 mx-auto">
                 <button type="submit" class="btn btn-primary">submit</button>
-                </div>
+            </div>
         </form>
 
     </div>
     <div class="container mt-5">
-        <footer>For assistance please call 555-5555 or email test@test.com. 
+        <footer>For assistance please call 555-5555 or email <a href="mailto:test@test.com"> test@test.com</a>
         </footer>
        </div>
     
