@@ -8,6 +8,9 @@ const howDidEl = $('select[name="how-did"]')
 const otherSelectedEl = $('input[name="other-selected"]')
 const termsConditionsEl = $('input[name="terms-conditions"]')
 
+const numeralRegEx {
+  
+}
 
 // adds and removes text box based on  whether or not the option "Other..." was selected. 
 function addTextForOther (event) {
@@ -35,7 +38,7 @@ function switchRequired(event) {
 }
 
 
-
+// Logs values to console, clears inputs. 
 function handleFormSubmit(event) {
     event.preventDefault();
     // log values 
