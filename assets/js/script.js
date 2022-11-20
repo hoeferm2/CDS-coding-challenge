@@ -8,9 +8,17 @@ const howDidEl = $('select[name="how-did"]')
 const otherSelectedEl = $('input[name="other-selected"]')
 const termsConditionsEl = $('input[name="terms-conditions"]')
 
-const numeralRegEx {
-  
+const openModal = $('#open-terms-button')
+const termsConditionsModal = $("#terms-conditions-modal")
+const closeModal = $('#close-modal-button')
+
+// open terms and conditions
+
+function termsModalPopUp (event) {
+  event.preventDefault()
+
 }
+
 
 // adds and removes text box based on  whether or not the option "Other..." was selected. 
 function addTextForOther (event) {
@@ -40,6 +48,9 @@ function switchRequired(event) {
 
 // Logs values to console, clears inputs. 
 function handleFormSubmit(event) {
+
+  const completedAlert = $(`<div class="col-md-12 mx-auto"><div class="alert alert-success col-md-5 mx-auto" role="alert" id="green-alert">You have filled in all the fields correctly.</div></div>`)
+
     event.preventDefault();
     // log values 
     console.log('First Name:', firstNameEl.val());
@@ -49,6 +60,11 @@ function handleFormSubmit(event) {
     console.log('Promo Code:', promoCodeEl.val());
     console.log('How you found out about us:',howDidEl.val() + otherSelectedEl.val())
     console.log("Read terms and condtions?" + termsConditionsEl.val())
+    formEl.prepend(completedAlert)
+
+    setTimeout(function() {
+      completedAlert.remove();
+    }, 2000);
 
 
     //clear inputs
@@ -59,8 +75,15 @@ function handleFormSubmit(event) {
 }
 
 
+// opening and closeing terms and conditions modal.
+openModal.on('click', () => {
+  termsConditionsModal.show()
+})
 
-// promoCodeEl.on('keyup',disableDropDown)
+closeModal.on('click', () => {
+  termsConditionsModal.hide()
+})
+
 howDidEl.on('change',addTextForOther)
 howDidEl.on('change',switchRequired)
 formEl.on('submit', handleFormSubmit)

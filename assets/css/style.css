@@ -18,6 +18,8 @@
     font-weight: bold;
   }
 
+  .big-checkbox {width: 30px; height: 30px;}
+
  #is-required {
   color: red;
  }
@@ -26,6 +28,17 @@
  }
  #is-required-other {
   color: red;
+ }
+
+ input::placeholder {
+  font-style: italic;
+  opacity: .5;
+}
+
+
+ #green-alert {
+  font-size: 14px;
+  font-weight: bolder;
  }
 
   img {
