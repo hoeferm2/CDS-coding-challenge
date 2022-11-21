@@ -5,26 +5,19 @@ const phoneNumEl = $('input[name="phone-number"]')
 const emailEl = $('input[name="email-address"]')
 const promoCodeEl = $('input[name="promo-code"]')
 const howDidEl = $('select[name="how-did"]')
-const otherSelectedEl = $('input[name="other-selected"]')
+
 const termsConditionsEl = $('input[name="terms-conditions"]')
 
 const openModal = $('#open-terms-button')
 const termsConditionsModal = $("#terms-conditions-modal")
 const closeModal = $('#close-modal-button')
 
-// open terms and conditions
-
-function termsModalPopUp (event) {
-  event.preventDefault()
-
-}
-
 
 // adds and removes text box based on  whether or not the option "Other..." was selected. 
 function addTextForOther (event) {
   event.preventDefault()
   if (howDidEl.val() == "Other...") {
-    $("#how-did-form").append('<input type="text" class="form-control" name="other-selected" id="other-selected" maxlength="255" required><label for="promo-code" class="form-label" id="is-required-other"> Required</label>');
+    $("#how-did-form").append('<input type="text" class="form-control" name="other-selected" id="other-selected" maxlength="255" required><label for="promo-code" class="form-label" id="is-required-other" value=""> Required</label>');
     $('#is-optional-how-did').hide()
   } else {
     $("#other-selected").remove()
@@ -50,6 +43,8 @@ function switchRequired(event) {
 // Logs values to console, clears inputs. Posts alert to top of form, alert disappears after three seconds
 function handleFormSubmit(event) {
 
+  const otherSelectedEl = $('input[name="other-selected"]')
+
   const completedAlert = $(`<div class="col-md-12 mx-auto"><div class="alert alert-success col-md-5 mx-auto" role="alert" id="green-alert">You have filled in all the fields correctly.</div></div>`)
 
     event.preventDefault();
@@ -60,7 +55,7 @@ function handleFormSubmit(event) {
     console.log('Email:', emailEl.val());
     console.log('Promo Code:', promoCodeEl.val());
     console.log('How you found out about us:',howDidEl.val())
-    console.log("What they typed", + otherSelectedEl.val())
+    console.log('What they typed' ,otherSelectedEl.val())
 
     if (termsConditionsEl.prop('checked', true)) {
     console.log("Read terms and condtions?" + " Yes")
@@ -89,6 +84,8 @@ openModal.on('click', () => {
 closeModal.on('click', () => {
   termsConditionsModal.hide()
 })
+
+//even listeners
 
 howDidEl.on('change',addTextForOther)
 howDidEl.on('change',switchRequired)
