@@ -24,7 +24,7 @@ function termsModalPopUp (event) {
 function addTextForOther (event) {
   event.preventDefault()
   if (howDidEl.val() == "Other...") {
-    $("#how-did-form").append('<input type="text" class="form-control" name="other-selected" id="other-selected" maxlength="255" required><label for="promo-code" class="form-label" id="is-required-other"> Is required*</label>');
+    $("#how-did-form").append('<input type="text" class="form-control" name="other-selected" id="other-selected" maxlength="255" required><label for="promo-code" class="form-label" id="is-required-other"> Required</label>');
     $('#is-optional-how-did').hide()
   } else {
     $("#other-selected").remove()
@@ -39,16 +39,15 @@ function switchRequired(event) {
   if (howDidEl.val() != "") {
     console.log(howDidEl.val())
     $('#promo-code').attr('required',false)
-    $('#is-required-promo').html("Optional*")
+    $('#is-required-promo').html("Optional")
   } else {
     $('#promo-code').attr('required',true)
-    $('#is-required-promo').html("Is required*")
+    $('#is-required-promo').html("Required")
   }
-  console.log('This worked')
 }
 
 
-// Logs values to console, clears inputs. 
+// Logs values to console, clears inputs. Posts alert to top of form, alert disappears after three seconds
 function handleFormSubmit(event) {
 
   const completedAlert = $(`<div class="col-md-12 mx-auto"><div class="alert alert-success col-md-5 mx-auto" role="alert" id="green-alert">You have filled in all the fields correctly.</div></div>`)
@@ -61,7 +60,7 @@ function handleFormSubmit(event) {
     console.log('Email:', emailEl.val());
     console.log('Promo Code:', promoCodeEl.val());
     console.log('How you found out about us:',howDidEl.val())
-    console.log("What they typed", + otherSelectedEl.val()
+    console.log("What they typed", + otherSelectedEl.val())
 
     if (termsConditionsEl.prop('checked', true)) {
     console.log("Read terms and condtions?" + " Yes")

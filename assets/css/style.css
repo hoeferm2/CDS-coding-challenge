@@ -1,9 +1,33 @@
 
+body {
+  background-color: hsl(0, 0%, 95%)
+}
+
+#form-container {
+  background-color: rgb(186, 202, 201);
+  
+}
+
+input[type='text'] {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+#phone-number, #how-did, #promo-code {
+  font-size: 12px;
+  font-weight: normal;
+}
+
 #header-image{
     margin: 0 auto;
     width:100%;
     display: flex;
   }
+
+ .bold-asterik {
+  color: red;
+  font-weight: bold;
+ } 
 
   #info-form {
     font-size: 12px;
@@ -21,19 +45,10 @@
 
   .big-checkbox {width: 30px; height: 30px;}
 
- #is-required {
-  color: red;
- }
- #is-required-promo {
-  color: red;
- }
- #is-required-other {
-  color: red;
- }
 
- input::placeholder {
+ input[type="email"] {
   font-style: italic;
-  opacity: .5;
+  
 }
 
 
@@ -47,7 +62,7 @@
     width: 100%;
     align-items: center;  
     flex-direction: column;
-
+    filter: grayscale(90%);
 
 }
 footer {
