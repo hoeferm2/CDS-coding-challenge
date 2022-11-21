@@ -9,7 +9,7 @@
     <title>CDS Form</title>
 </head>
 <body style="background-color: hsl(0, 0%, 95%)">
-   <div class="container mt-2 mx-auto">
+   <div class="container mt-2 ">
     <img src="assets\images\CDS-header.png" alt="Header Image">
    </div>
     <div style="background-color: white;"class="containter mt-2 mx-5 border border-primary">
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-5 mx-auto">
                 <label for="phone-number" class="form-label"> Phone Number </label>
-                <input type="text" class="form-control" name="phone-number" id="phone-number" maxlength="30" pattern="[0-9]+" title="Username must only include numbers."required>
+                <input type="text" class="form-control" name="phone-number" id="phone-number" maxlength="30" pattern="[0-9]+" title="Username must only include numbers." required>
                 <label for="phone-number" class="form-label" id="is-required"> Required* </label>
             </div>
             <div class="col-md-5 mx-auto" id="promo-code-div">
@@ -47,10 +47,9 @@
                     <option id="social-option">Social Media</option>
                     <option id="email-option">E-mail</option>
                     <option id="friend-option">From a friend</option>
-                    <option id="other-option">Other...</option>
-                    
+                    <option id="other-option">Other...</option>                  
                   </select>
-                  <label for="how-did" class="form-label" id="is-optional"> Optional*</label>
+                  <label for="how-did" class="form-label" id="is-optional-how-did"> Optional*</label>
             </div>
             <div class="col-md-3 mx-auto">
 
@@ -59,9 +58,9 @@
                     <h6> All cancellation requests must be received by March 1, 2022 </h6>
                     <h6> All cancellation requests are subject to a $100 cancellation fee. </h6>
                     <h6> No one under the age of 16 will be allowed on the show floor. </h6>
-                    <a class=' btn btn-link' id="close-modal-button">close</a>
+                    <a class='btn btn-link' id="close-modal-button">close</a>
                 </dialog> 
-            <p>I agree to the <a class=' btn-link' id="open-terms-button">Terms and conditions</a></p>
+            <p>I agree to the <a class='btn-link' style="cursor:pointer" id="open-terms-button">Terms and conditions</a></p>
             <input class="big-checkbox" name="terms-conditions" type="checkbox" value="" id="flexCheckDefault" >
            
            

@@ -25,9 +25,11 @@ function addTextForOther (event) {
   event.preventDefault()
   if (howDidEl.val() == "Other...") {
     $("#how-did-form").append('<input type="text" class="form-control" name="other-selected" id="other-selected" maxlength="255" required><label for="promo-code" class="form-label" id="is-required-other"> Is required*</label>');
+    $('#is-optional-how-did').hide()
   } else {
     $("#other-selected").remove()
     $("#is-required-other").remove()
+    $('#is-optional-how-did').show()
   }
 }
 
@@ -58,13 +60,18 @@ function handleFormSubmit(event) {
     console.log('Phone Number:', phoneNumEl.val());
     console.log('Email:', emailEl.val());
     console.log('Promo Code:', promoCodeEl.val());
-    console.log('How you found out about us:',howDidEl.val() + otherSelectedEl.val())
-    console.log("Read terms and condtions?" + termsConditionsEl.val())
+    console.log('How you found out about us:',howDidEl.val())
+    console.log("What they typed", + otherSelectedEl.val()
+
+    if (termsConditionsEl.prop('checked', true)) {
+    console.log("Read terms and condtions?" + " Yes")
+    }
+
     formEl.prepend(completedAlert)
 
     setTimeout(function() {
       completedAlert.remove();
-    }, 2000);
+    }, 3000);
 
 
     //clear inputs
