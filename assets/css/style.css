@@ -13,7 +13,7 @@ input[type='text'] {
   font-weight: bolder;
 }
 
-#phone-number, #how-did, #promo-code {
+#phone-number, #how-did, #promo-code, #other-selected {
   font-size: 12px;
   font-weight: normal;
 }
